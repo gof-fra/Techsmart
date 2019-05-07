@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul>
+    {% for product in products %}
+
+        {% if item.featured %}
+             <img class="rounded-circle article-img" width="200px" height="200px" src="{{ MEDIA_URL }} {{ item.image.url }}" />
+        {% endif %}
+
+        <li>{{product.titre}} - {{product.price}}</li>
+
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

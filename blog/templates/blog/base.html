@@ -1,0 +1,186 @@
+{% load static %}
+<html lang="en">
+<head>
+
+     <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .dropdown-submenu {
+          position: relative;
+        }
+        .dropdown-submenu .dropdown-menu {
+          top: 0;
+          left: 100%;
+          margin-top: -1px;
+        }
+        #logo
+        {
+            display: inline-block;
+            position: absolute;
+            height: 50px;
+             left: -400px;
+        }
+        #A
+        {
+            top: 25px;
+            position: absolute;
+             right: 600px;
+        }
+        #B
+        {
+            top: 25px;
+            position: absolute;
+             right: 450px;
+        }
+        #C
+        {
+            top: 25px;
+            position: absolute;
+             right: 300px;
+        }
+        #D
+        {
+            top: 25px;
+            position: absolute;
+             right: 150px;
+        }
+        #E
+        {
+            top: 25px;
+            position: absolute;
+             right: 0px;
+        }
+        #F
+        {
+            top: 25px;
+            position: absolute;
+             right: -300px;
+        }
+     </style>
+
+
+    {% if title %}
+        <title>Smartech - {{ title }} </title>
+    {% else %}
+        <title>Smartech </title>
+    {% endif %}
+</head>
+<body>
+    <!-- navigation bar -->
+  <header>
+    <!-- header-area start -->
+<!--   <div id="sticker" class="header-area">-->
+      <div class="container">
+
+          <div class="col-md-12 col-sm-12">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-light" style="background-color: white">
+              <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                      <div type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
+                             <span class="sr-only">Toggle navigation</span>
+                             <span class="icon-bar"></span>
+                             <span class="icon-bar"></span>
+                             <span class="icon-bar"></span>
+                      </div>
+                      <!-- Brand -->
+                      <a class="navbar-brand page-scroll sticky-logo" href="{% url 'smartech-home' %}">
+                        <img src="{% static 'img/slider/logo1.png' %}" rel="stylesheet" width="300px" id="logo">
+                      </a>
+                  </div>
+
+                    <div class="item-nav" id="A">
+                          <a href="{% url 'smartech-home' %}"  role="">Accueil</a>
+                    </div>
+
+                    <div class="item-nav" id="B">
+                        <a class="nav nav-tabs" type="button" data-toggle="dropdown">Solutions
+                        </a>
+                    </div>
+
+                    <div class="item-nav" id="C">
+                        <a class="" type="button" data-toggle="dropdown" >Services
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                          <a tabindex="-1" href="#">Formations</a>
+                          <a tabindex="-1" href="#">Produits</a>
+                        </div>
+                    </div>
+
+                     <div class="item-nav" id="D">
+                      <div class="btn-group">
+                        <a type="" class=""> Blog</a>
+                        <a type="" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="menu">
+                          {% if user.is_authenticated %}
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                            <a class="dropdown-item" href="{% url 'smartech-blog' %}">Blog</a>
+                          {% else %}
+                            <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item-nav" id="E">
+                      <div class="btn-group">
+                        <a type="" class="">Login</a>
+                        <a type="" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="sr-only">Action</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="menu">
+                          {% if user.is_authenticated %}
+                            <a class="dropdown-item" href="{% url 'logout' %}">Out</a>
+                          {% else %}
+                            <a class="dropdown-item" href="{% url 'login' %}">In</a>
+                            <a class="dropdown-item" href="{% url 'post-create' %}">Admin</a>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+
+                  <div class="item-nav" id="F">
+                    <form class="form-inline my-0 my-lg-0">
+                          <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                  </div>
+
+            </nav>
+          </div>
+
+      </div>
+  </header>
+    <!-- end navigation bar -->
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8">
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              {% endif %}
+            </div>
+        </div>
+    </main>
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+</body>

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+<!--{% block jquery %}
+    alert("Welcome back haggar")
+{% endblock %}-->
+
+{% block content %}
+
+    <div class="jumbotron mt-3">
+        <h1>Smart Formation</h1>
+        <p class="lead">SMARTECH offre une approche entièrement intégrée.</p>
+        <a class="btn btn-lg btn-primary" href="/docs/4.3/components/navbar/" role="button">View Formation &raquo;</a>
+    </div>
+
+    <div class="row">
+        {% for product in products %}
+         <div class="col-sm-4">
+
+             <div class="thumbnail">
+                 {% for item in product.productimage_set.all %}
+
+                     {% if item.featured %}
+                        <img class="rounded-circle article-img" width="200px" height="200px" src="{{ MEDIA_URL }} {{ item.image.url }}" />
+                     {% endif %}
+
+                 {% endfor %}
+
+
+                 <div class="caption">
+                     <a href='{{ product.get_absolute_url}}'> <h3>{{ product.title }}</h3></a>
+                     <p> {{ product.description|truncatewords:15 }}</p>
+                     <p>
+                        <a href="{{ product.get_absolute_url }}" class="btn btn-primary" role="button">View</a>
+                        <a href="#" class="btn btn-info" role="button">Cancel</a>
+                     </p>
+                 </div>
+
+             </div>
+
+             <hr>
+             <a href="{{ product.get_absolute_url }}"> {{ product.titre }} </a> <hr>
+             {{ product.price }} <hr>
+             {{ product.slug }}  <hr>
+
+         </div>
+
+        {% cycle "" "" "" "</div><br/><hr/><div class='row'>" %}
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

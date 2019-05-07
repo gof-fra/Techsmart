@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+    <div class="page-header">
+        <h1>{{product.titre}} </h1>
+    </div><hr/>
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-sm-4">
+        {% for img in images %}
+            {% if img.featured %}
+                <div class="col-xs-12">
+                    <img width="200px" height="200px" class="img-responsive" src="{{ MEDIA_URL }} {{ img.image.url }}" />
+                <hr/>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% for img in images %}
+            {% if not img.featured %}
+                <div class="col-xs-6">
+                    <a href="#" class="thumbail">
+                        <img width="200px" height="200px" class="img-responsive" src="{{ MEDIA_URL }} {{ img.image.url }}" />
+                    </a>
+                </div>
+            {% endif %}
+
+        {% endfor %}
+        </div>
+        <div class="col-sm-8">
+            <h1>{{product.titre}} | <a href="{% url 'update-cart' product.slug 0 %}" class="pull-right">Add to Cart</a> </h1>
+            Price: {{ product.price }} <hr/>
+            {{ product.description| linebreaks }}
+        </div>
+    </div>
+{% endblock %}

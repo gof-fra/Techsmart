@@ -1,0 +1,66 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <br>
+     <article class="media content-section">
+        <div class="row">
+          <div class="col-lg-8">
+           <div class="media">
+            <img class="rounded-circle account-img" width="100px" height="150px" src="{{ object.auteur.profile.image.url }}">
+            <div class="media-body">
+                    <h1><a >{{ object.titre }} </a></h1>
+                   <p class="lead">
+                    by: <a class="mr-2" href="{% url 'user-posts' object.auteur.username %}"> {{ object.auteur }} </a>, Posted on {{ object.date | date:"F d, Y" }}
+                   </p>
+                <div class="article-metadata">
+                    <hr>
+                        {% if object.auteur == user %}
+                            <div>
+                                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+                                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+                                <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'smartech-blog' %}">Cancel</a>
+                            </div>
+                        {% else %}
+                            <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'smartech-blog' %}">Cancel</a>
+                        {% endif %}
+                    </div>
+                   <hr>
+
+                   <div class="article-metadata">
+                      <h5 class="card-header">Object</h5>
+                      <div class="card-body">
+                          <div class="form-group">
+                            <textarea class="form-control" rows="3"> {{ object.contenu }}</textarea>
+                          </div>
+                      </div>
+                   </div>
+                      <hr>
+                    <img class="w3-border w3-padding" width="1000px" height="200px" src="{{ object.auteur.profile.image.url }}" alt="">
+
+                   <div class="article-metadata">
+                      {% if object.auteur == user or object.auteur != user %}
+                      <h5 class="card-header">Leave a Comment:</h5>
+                       <form action="" method="POST">
+                       <h6><a href=""><button class="btn btn-primary">Add Comment</button></a> Total comments {{ post.comments.count }}:</h6>
+                           <hr>
+                      <div class="card-body">
+                                {% for comment in post.comments.all %}
+                                    <p>{{ comment.date }}</p>
+                                    <p>{{ comment.auteur }}</p>
+                                    <p>{{ comment.contenu }}</p>
+                                {% empty %}
+                                    <p>No comment!!!</p>
+                                {% endfor %}
+                          </div>
+
+                        </form>
+                      </div>
+                     {% endif %}
+                   </div>
+            </div>
+           </div>
+         </div>
+
+        </div>
+  </article>
+
+{% endblock %}
