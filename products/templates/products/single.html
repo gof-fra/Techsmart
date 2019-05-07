@@ -29,7 +29,7 @@
         {% endfor %}
         </div>
         <div class="col-sm-8">
-            <h1>{{product.titre}} | <a href="{% url 'update-cart' product.slug 0 %}" class="pull-right">Add to Cart</a> </h1>
+            <h1>{{product.titre}} | <a href="{% url 'update-cart' product.slug %}" class="pull-right">Add to Cart</a> </h1>
             Price: {{ product.price }} <hr/>
             {{ product.description| linebreaks }}
         </div>
