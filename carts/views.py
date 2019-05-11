@@ -30,6 +30,7 @@ def update_cart(request, slug):
 
     try:
         attr = request.GET.get('attr')
+        print(attr)
     except:
         attr = None
 

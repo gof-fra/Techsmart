@@ -29,16 +29,32 @@
         {% endfor %}
         </div>
         <div class="col-sm-8">
+            <div class="col-sm-8 pull-left">
+                <h1>{{product.titre}} |
+                <!-- <a href="{% url 'update-cart' product.slug %}?qty=12" class="pull-right">Add to Cart</a> -->
+                </h1>
+            </div>
+            <div class="col-sm-4 pull-right">
+                <form class="form pull-right" method="GET" action="{% url 'update-cart' product.slug %}">
+                    <input class="btn btn-primary btn-block" type="submit" value="Add to cart" />
+                    <input class="form-control" name="qty" type="number" value="1" />
+                    <input class="form-control" name="attr" type="text" placeholder="color">
 
-            <h1>{{product.titre}} | <a href="{% url 'update-cart' product.slug %}?qty=12" class="pull-right">Add to Cart</a> </h1>
-            <form class="form pull-right" method="GET" action="{% url 'update-cart' product.slug %}">
-                <input name="qty" type="number" value="1" />
-                <input name="attr" type="text" placeholder="color">
-                <input type="submit" value="Add to cart" />
-            </form>
-            Price: {{ product.price }} <hr/>
-            {{ product.description| linebreaks }}
 
+                    <select class="form-control" name="attr">
+                        <option value="red">Red</option>
+                        <option value="red">Green</option>
+                        <option value="red">Yellow</option>
+                    </select>
+
+                </form>
+            </div>
+            <div class="col-sm-12">
+                Price: {{ product.price }} <hr/>
+            </div>
+            <div class="col-sm-12">
+                {{ product.description| linebreaks }}
+            </div>
         </div>
     </div>
 {% endblock %}
