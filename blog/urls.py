@@ -13,6 +13,7 @@ urlpatterns = [
 
     path('', views.home, name='smartech-home'),
     path('home/', views.home, name='smartech-home'),
+    path('admin/', views.admin, name='admin'),
     path('about/', views.about, name='blog-about'),
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
     path('blog/post/', PostListView.as_view(), name='smartech-blog'),

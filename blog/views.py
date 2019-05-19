@@ -18,6 +18,10 @@ def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
 
 
+def admin(request):
+    return render(request, 'blog/about.html', {'title': 'Admin'})
+
+
 def blog(request):
     context = {
         'posts': Post.objects.all()
