@@ -20,6 +20,14 @@
                  {% for item in product.productimage_set.all %}
 
                      {% if item.featured %}
+                     <div style="
+                     width:500px;
+                     height:160px;
+                     background-color:red;
+                     background-image: url('{{ MEDIA_URL }} {{ item.image }}')
+                    ">
+
+                     </div>
                         <img class="rounded-circle article-img" width="200px" height="200px" src="{{ MEDIA_URL }} {{ item.image.url }}" />
                      {% endif %}
 
@@ -31,7 +39,7 @@
                      <p> {{ product.description|truncatewords:15 }}</p>
                      <p>
                         <a href="{{ product.get_absolute_url }}" class="btn btn-primary" role="button">View</a>
-                        <a href="#" class="btn btn-info" role="button">Cancel</a>
+                        <a href="{% url 'smartech-home' %}" class="btn btn-info" role="button">Cancel</a>
                      </p>
                  </div>
 
