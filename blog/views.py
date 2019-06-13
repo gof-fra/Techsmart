@@ -22,6 +22,10 @@ def admin(request):
     return render(request, 'blog/about.html', {'title': 'Admin'})
 
 
+def industry(request):
+    return render(request, 'blog/industry.html', {'title': 'Industry Solution'})
+
+
 def blog(request):
     context = {
         'posts': Post.objects.all()

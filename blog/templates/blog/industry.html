@@ -1,0 +1,520 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title> </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon"><!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="{% static 'LibL/images/icons/favicon.ico' %}"/>
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'blog/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/lib/nivo-slider/css/nivo-slider.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/lib/owlcarousel/owl.carousel.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/lib/owlcarousel/owl.transitions.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/lib/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/lib/bootstrap/css/nivo-slider-theme.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/lib/bootstrap/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/lib/bootstrap/css/responsive.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'blog/Smart/css/style.css' %}">
+
+     <!--dropdown-->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <style>
+            .dropdown-submenu {
+              position: relative;
+            }
+            .dropdown-submenu .dropdown-menu {
+              top: 0;
+              left: 100%;
+              margin-top: -1px;
+            }
+            #logo
+            {
+                display: inline-block;
+                position: absolute;
+                height: 50px;
+                 left: -400px;
+            }
+            #A
+            {
+                top: 25px;
+                position: absolute;
+                 right: 600px;
+            }
+            #B
+            {
+                top: 25px;
+                position: absolute;
+                 right: 450px;
+            }
+            #C
+            {
+                top: 25px;
+                position: absolute;
+                 right: 300px;
+            }
+            #D
+            {
+                top: 25px;
+                position: absolute;
+                 right: 150px;
+            }
+            #E
+            {
+                top: 25px;
+                position: absolute;
+                 right: 0px;
+            }
+            #F
+            {
+                top: 25px;
+                position: absolute;
+                 right: -300px;
+            }
+
+            // dropdown
+
+            .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+          }
+
+          /* The container <div> - needed to position the dropdown content */
+          .dropdown {
+            position: relative;
+            display: inline-block;
+          }
+
+          /* Dropdown Content (Hidden by Default) */
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+
+          /* Links inside the dropdown */
+          .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+          }
+
+          /* Change color of dropdown links on hover */
+          .dropdown-content a:hover {background-color: #ddd;}
+
+          /* Show the dropdown menu on hover */
+          .dropdown:hover .dropdown-content {display: block;}
+
+          /* Change the background color of the dropdown button when the dropdown content is shown */
+          .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+
+
+          .dropdown-submenu {
+              position: relative;
+          }
+
+          .dropdown-submenu>.dropdown-menu {
+              top: 0;
+              left: 100%;
+              margin-top: -6px;
+              margin-left: -1px;
+              -webkit-border-radius: 0 6px 6px 6px;
+              -moz-border-radius: 0 6px 6px;
+              border-radius: 0 6px 6px 6px;
+          }
+
+          .dropdown-submenu:hover>.dropdown-menu {
+              display: block;
+          }
+
+          .dropdown-submenu>a:after {
+              display: block;
+              content: " ";
+              float: right;
+              width: 0;
+              height: 0;
+              border-color: transparent;
+              border-style: solid;
+              border-width: 5px 0 5px 5px;
+              border-left-color: #ccc;
+              margin-top: 5px;
+              margin-right: -10px;
+          }
+
+          .dropdown-submenu:hover>a:after {
+              border-left-color: #fff;
+          }
+
+          .dropdown-submenu.pull-left {
+              float: none;
+          }
+
+          .dropdown-submenu.pull-left>.dropdown-menu {
+              left: -100%;
+              margin-left: 10px;
+              -webkit-border-radius: 6px 0 6px 6px;
+              -moz-border-radius: 6px 0 6px 6px;
+              border-radius: 6px 0 6px 6px;
+          }
+         </style>
+
+</head>
+<body>
+ <div id="preloader">
+        <div class="wrapper">
+            <div class="cssload-loader"></div>
+        </div>
+    </div>
+  <header>
+    <!-- header-area start -->
+<!--   <div id="sticker" class="header-area">-->
+      <div class="container">
+
+         <div class="col-md-12 col-sm-12">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-light" style="background-color: white">
+              <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                      <div type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
+                             <span class="sr-only">Toggle navigation</span>
+                             <span class="icon-bar"></span>
+                             <span class="icon-bar"></span>
+                             <span class="icon-bar"></span>
+                      </div>
+                      <!-- Brand -->
+                      <a class="navbar-brand page-scroll sticky-logo" href="{% url 'smartech-home' %}">
+                        <img src="{% static 'img/slider/logo1.png' %}" rel="stylesheet" width="300px" id="logo">
+                      </a>
+                  </div>
+
+                    <div class="item-nav" id="A">
+                      <a href="{% url 'smartech-home' %}">
+                        <form class="form-inline my-0 my-lg-0">
+                              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Accueil</button>
+                        </form>
+                      </a>
+                    </div>
+
+                     <div class="item-nav" id="B">
+                      <div class="btn-group">
+                        <a type="" class=""> Produits</a>
+                        <a type="" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="menu">
+                             <li class="dropdown-submenu">
+                            <a class="dropdown-item" href="">IMB Maximo</a>
+                              <ul class="dropdown-menu">
+                                <li><a href="{% url 'industry' %}">Industry Solution</a></li>
+                              </ul></li>
+                              <li class="divider"></li>
+                            <a class="dropdown-item" href="{% url 'smartech-blog' %}">IBM Control Desk</a>
+                                <li class="divider"></li>
+                            <li class="dropdown-submenu">
+                              <a tabindex="-1" href="#">Smartech Add-on</a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Smart Mobile</a></li>
+                                  <li class="divider"></li>
+                               <!--  <li class="dropdown-submenu">
+                                 <a href="#">Even More..</a>
+                                  <ul class="dropdown-menu">
+                                      <li><a href="#">3rd level</a></li>
+                                      <li><a href="#">3rd level</a></li>
+                                  </ul>
+                                </li>-->
+                                <li><a href="#">Full Cost</a></li>
+                                  <li class="divider"></li>
+                                <li><a href="#">Label printing</a></li>
+                                  <li class="divider"></li>
+                                <li><a href="#">Lubrication Module</a></li>
+                                  <li class="divider"></li>
+                                <li><a href="#">Project Link</a></li>
+                                  <li class="divider"></li>
+                                <li><a href="#">Timesheet</a></li>
+                                  <li class="divider"></li>
+                                <li><a href="#">Navigator</a></li>
+                                  <li class="divider"></li>
+                                <li><a href="#">E-commerce</a></li>
+                              </ul>
+                            </li>
+                        </div>
+                      </div>
+                    </div>
+
+                     <div class="item-nav" id="C">
+                      <div class="btn-group">
+                        <a type="" class=""> Services</a>
+                        <a type="" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="menu">
+                            <a class="dropdown-item" href="">Formation</a>
+                              <li class="divider"></li>
+                            <a class="dropdown-item" href="">Assisance</a>
+                              <li class="divider"></li>
+                            <a class="dropdown-item" href="">Migration</a>
+                              <li class="divider"></li>
+                            <a class="dropdown-item" href="">Développement Spécifique</a>
+                              <li class="divider"></li>
+                            <a class="dropdown-item" href="">Intégration</a>
+                        </div>
+                      </div>
+                    </div>
+
+                     <div class="item-nav" id="D">
+                      <div class="btn-group">
+                        <a type="" class=""> Blog</a>
+                        <a type="" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="menu">
+                          {% if user.is_authenticated %}
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                            <a class="dropdown-item" href="{% url 'smartech-blog' %}">Blog</a>
+                            <a class="dropdown-item" href="{% url 'post-create' %}">New Post</a>
+                          {% else %}
+                            <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item-nav" id="E">
+                      <div class="btn-group">
+                        <a type="" class="">Login</a>
+                        <a type="" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="sr-only">Action</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="menu">
+                          {% if user.is_authenticated %}
+                            <a class="dropdown-item" href="{% url 'logout' %}">Out</a>
+                          {% else %}
+                            <a class="dropdown-item" href="{% url 'login' %}">In</a>
+                              <li class="divider"></li>
+                            <a class="dropdown-item" href="{% url 'admin' %}">Admin</a>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+
+                  <div class="item-nav" id="F">
+                    <form class="form-inline my-0 my-lg-0">
+                          <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                  </div>
+
+            </nav>
+          </div>
+
+      </div>
+  </header>
+  <!-- header end -->
+
+    <!-- ***** Breadcrumb Area Start ***** -->
+    <div class="breadcrumb-area">
+        <div class="container h-100">
+            <div class="row h-100 align-items-end">
+                <div class="col-12">
+                    <div class="breadcumb--con">
+                        <h2 class="title">Industry Solution</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Products</li>
+                                <li class="breadcrumb-item active" aria-current="page">IBM Maximo</li>
+                                <li class="breadcrumb-item active" aria-current="page">Industry Solution</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Curve -->
+        <div class="breadcrumb-bg-curve">
+            <img src="./img/core-img/curve-5.png" alt="">
+        </div>
+    </div>
+    <!-- ***** Breadcrumb Area End ***** -->
+
+    <!-- ***** About Us Area Start ***** -->
+    <section class="uza-about-us-area section-padding-80">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- About Thumbnail -->
+
+                <!-- About Us Content -->
+                <div class="">
+                    <div class="section-heading mb-5">
+                        <h2>Our Mission</h2>
+                    </div>
+
+                    <div >
+                        <img src="{% static 'img/p86.jpg' %}" rel="stylesheet" width="100%" height="100%" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** About Us Area End ***** -->
+
+    <!-- ***** Portfolio Area Start ***** -->
+    <section class="uza-portfolio-area section-padding-80">
+        <div class="container">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <br><br><br>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Feedback Area Start -->
+        <div class="clients-feedback-area mt-80 section-padding-80 clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Testimonial Slides -->
+                        <div class="testimonial-slides owl-carousel">
+
+                           <div class="single-testimonial-slide d-flex align-items-center">
+                                <!-- Testimonial Thumbnail -->
+                                 <div >
+                                    <img src="{% static 'img/p87.jpg' %}" rel="stylesheet" width="100%" height="100%" >
+                                </div>
+                            </div>
+                            <div class="single-testimonial-slide d-flex align-items-center">
+                                <!-- Testimonial Thumbnail -->
+                                 <div >
+                                    <img src="{% static 'img/p88.jpg' %}" rel="stylesheet" width="100%" height="100%" >
+                                </div>
+                            </div>
+                           <div class="single-testimonial-slide d-flex align-items-center">
+                                <!-- Testimonial Thumbnail -->
+                                 <div >
+                                    <img src="{% static 'img/p89.jpg' %}" rel="stylesheet" width="100%" height="100%" >
+                                </div>
+                            </div>
+                           <div class="single-testimonial-slide d-flex align-items-center">
+                                <!-- Testimonial Thumbnail -->
+                                 <div >
+                                    <img src="{% static 'img/p90.jpg' %}" rel="stylesheet" width="100%" height="100%" >
+                                </div>
+                            </div>
+                            <div class="single-testimonial-slide d-flex align-items-center">
+                                <!-- Testimonial Thumbnail -->
+                                 <div >
+                                    <img src="{% static 'img/p91.jpg' %}" rel="stylesheet" width="100%" height="100%" >
+                                </div>
+                            </div>
+                            <div class="single-testimonial-slide d-flex align-items-center">
+                                <!-- Testimonial Thumbnail -->
+                                 <div >
+                                    <img src="{% static 'img/p92.jpg' %}" rel="stylesheet" width="100%" height="100%" >
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Client Feedback Area End -->
+        <br><br><br>
+        <!-- Border -->
+        <div class="container">
+            <div class="border-line"></div>
+        </div>
+
+        <!-- Background Curve -->
+        <div class="portfolio-bg-curve">
+            <img src="./img/core-img/curve-3.png" alt="">
+        </div>
+    </section>
+    <!-- ***** Portfolio Area End ***** -->
+
+
+    <!-- ******* All JS Files ******* -->
+    <!-- jQuery js -->
+    <script src="{% static 'blog/Smart/js/jquery.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'blog/Smart/js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'blog/Smart/js/bootstrap.min.js' %}"></script>
+    <!-- All js -->
+    <script src="{% static 'blog/Smart/js/uza.bundle.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'blog/Smart/js/default-assets/active.js' %}"></script>
+
+     <footer >
+
+    <div class="footer-area-bottom" >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="copyright text-center">
+              <p>
+                &copy; Copyright <strong>Smartech</strong>. All Rights Reserved
+              </p>
+            </div>
+            <div class="credits">
+              Designed by <a href="https://smartech.com/">Smartech</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static 'blog/lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'blog/lib/bootstrap/js/jquery-1.10.2.js' %}"></script>
+  <script src="{% static 'blog/lib/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'blog/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'blog/lib/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'blog/lib/knob/jquery.knob.js' %}"></script>
+  <script src="{% static 'blog/lib/wow/wow.min.js' %}"></script>
+  <script src="{% static 'blog/lib/parallax/parallax.js' %}"></script>
+  <script src="{% static 'blog/lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'blog/lib/nivo-slider/js/jquery.nivo.slider.js' %}" type="text/javascript"></script>
+  <script src="{% static 'blog/lib/appear/jquery.appear.js' %}"></script>
+  <script src="{% static 'blog/lib/isotope/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'blog/contactform/contactform.js' %}"></script>
+  <script src="{% static 'blog/lib/bootstrap/js/main.js' %}"></script>
+
+  <script>
+    $(document).ready( function() {
+    $('.dropdown-toggle').dropdown();
+    });
+   </script>
+
+</body>
+
+</html>
