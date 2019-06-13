@@ -236,7 +236,7 @@
                             <li class="dropdown-submenu">
                               <a tabindex="-1" href="#">Smartech Add-on</a>
                               <ul class="dropdown-menu">
-                                <li><a href="#">Smart Mobile</a></li>
+                                <li><a href="{% url 'mobile' %}">Smart Mobile</a></li>
                                   <li class="divider"></li>
                                <!--  <li class="dropdown-submenu">
                                  <a href="#">Even More..</a>
@@ -245,7 +245,7 @@
                                       <li><a href="#">3rd level</a></li>
                                   </ul>
                                 </li>-->
-                                <li><a href="#">Full Cost</a></li>
+                               <!-- <li><a href="#">Full Cost</a></li>
                                   <li class="divider"></li>
                                 <li><a href="#">Label printing</a></li>
                                   <li class="divider"></li>
@@ -255,9 +255,9 @@
                                   <li class="divider"></li>
                                 <li><a href="#">Timesheet</a></li>
                                   <li class="divider"></li>
-                                <li><a href="#">Navigator</a></li>
+                                <li><a href="#">Navigator</a></li>-->
                                   <li class="divider"></li>
-                                <li><a href="#">E-commerce</a></li>
+                                <li><a href="{% url 'products' %}">E-commerce</a></li>
                               </ul>
                             </li>
                         </div>
@@ -270,7 +270,7 @@
                         <a type="" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="menu">
-                            <a class="dropdown-item" href="">Formation</a>
+                            <a class="dropdown-item" href="{% url 'formation' %}">Formation</a>
                               <li class="divider"></li>
                             <a class="dropdown-item" href="">Assisance</a>
                               <li class="divider"></li>
@@ -341,7 +341,7 @@
                         <h2 class="title">Industry Solution</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                                <li class="breadcrumb-item"><a href="{% url 'smartech-home' %}"><i class="fa fa-home"></i> Home</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Products</li>
                                 <li class="breadcrumb-item active" aria-current="page">IBM Maximo</li>
                                 <li class="breadcrumb-item active" aria-current="page">Industry Solution</li>

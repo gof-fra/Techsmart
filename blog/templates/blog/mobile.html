@@ -1,5 +1,5 @@
 {% load static %}
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -26,6 +26,7 @@
   <link href="{% static 'blog/lib/bootstrap/css/nivo-slider-theme.css' %}" rel="stylesheet">
   <link href="{% static 'blog/lib/bootstrap/css/style.css' %}" rel="stylesheet">
   <link href="{% static 'blog/lib/bootstrap/css/responsive.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'blog/Smart/css/style.css' %}">
 
      <!--dropdown-->
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -181,7 +182,12 @@
          </style>
 
 </head>
-
+<body>
+ <div id="preloader">
+        <div class="wrapper">
+            <div class="cssload-loader"></div>
+        </div>
+    </div>
   <header>
     <!-- header-area start -->
 <!--   <div id="sticker" class="header-area">-->
@@ -239,7 +245,7 @@
                                       <li><a href="#">3rd level</a></li>
                                   </ul>
                                 </li>-->
-                                <!--<li><a href="#">Full Cost</a></li>
+                               <!-- <li><a href="#">Full Cost</a></li>
                                   <li class="divider"></li>
                                 <li><a href="#">Label printing</a></li>
                                   <li class="divider"></li>
@@ -266,13 +272,13 @@
                         <div class="dropdown-menu" aria-labelledby="menu">
                             <a class="dropdown-item" href="{% url 'formation' %}">Formation</a>
                               <li class="divider"></li>
-                            <a class="dropdown-item" href="{% url 'smartech-blog' %}">Assisance</a>
+                            <a class="dropdown-item" href="">Assisance</a>
                               <li class="divider"></li>
-                            <a class="dropdown-item" href="{% url 'post-create' %}">Migration</a>
+                            <a class="dropdown-item" href="">Migration</a>
                               <li class="divider"></li>
-                            <a class="dropdown-item" href="{% url 'register' %}">Développement Spécifique</a>
+                            <a class="dropdown-item" href="">Développement Spécifique</a>
                               <li class="divider"></li>
-                            <a class="dropdown-item" href="{% url 'register' %}">Intégration</a>
+                            <a class="dropdown-item" href="">Intégration</a>
                         </div>
                       </div>
                     </div>
@@ -326,212 +332,83 @@
   </header>
   <!-- header end -->
 
-         <script>
-            $(document).ready(function(){
-              $('.dropdown-submenu a.test').on("click", function(e){
-                $(this).next('ul').toggle();
-                e.stopPropagation();
-                e.preventDefault();
-              });
-            });
-        </script>
-
-  <!-- Start Slider Area -->
-  <div id="home" class="slider-area">
-    <div class="bend niceties preview-2">
-      <div id="ensign-nivoslider" class="slides">
-        <img src="{% static 'img/slider/1.jpg' %}" alt="" title="#slider-direction-1" />
-        <img src="{% static 'img/slider/2.jpg' %}" alt="" title="#slider-direction-2" />
-        <img src="{% static 'img/slider/3.jpg' %}" alt="" title="#slider-direction-3" />
-      </div>
-
-      <!-- direction 1 -->
-      <div id="slider-direction-1" class="slider-direction slider-one">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="slider-content">
-                <!-- layer 1 -->
-                <!-- layer 2 -->
-                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">IBM nommée leader du Gartner Magic Quadrant en GMAO</h1>
-                </div>
-                <!-- layer 3 -->
-                <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <!--<a class="ready-btn page-scroll" href="#about">Suite</a>-->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- direction 2 -->
-      <div id="slider-direction-2" class="slider-direction slider-two">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="slider-content text-center">
-                <!-- layer 1 -->
-                <!-- layer 2 -->
-                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">Pourquoi les entreprises les mieux exploitées utilisent MAXIMO ET ERP</h1>
-                </div>
-                <!-- layer 3 -->
-                <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <!--<a class="ready-btn page-scroll" href="#about">Suite</a>-->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- direction 3 -->
-      <div id="slider-direction-3" class="slider-direction slider-two">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="slider-content">
-                <!-- layer 1 -->
-                <!-- layer 2 -->
-                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">Apprenez à gérer vos systèmes avec la formation MAXIMO</h1>
-                </div>
-                <!-- layer 3 -->
-                <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <!--<a class="ready-btn page-scroll" href="#about">Suite</a>-->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Slider Area -->
-
-  <!-- Start portfolio Area -->
-  <div id="portfolio" class="portfolio-area area-padding fix">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="section-headline text-center">
-            <h2>Vidéo & Smart Mobile</h2>
-          </div>
-        </div>
-      </div>
-          <!-- single-awesome-project start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 photo development">
-
-          </div>
-
-
-    </div>
-  </div>
-
-  <div></div>
-
-  <!--&lt;!&ndash; awesome-portfolio end &ndash;&gt;-->
-
-  <footer >
-    <div class="footer-area">
-      <div class="container">
-          <!-- Start contact Area -->
-          <!--<div id="contact" class="contact-area">-->
-                    <!--<div class="section-headline text-center">-->
-                      <!--<h2>Contact us</h2>-->
-                    <!--</div>-->
-              <!--</div>-->
-          <!-- End Contact Area -->
-  <!-- Start Footer bottom Area -->
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <div class="footer-logo">
-                  <h2>SMAR<span>T</span>ech</h2>
-                </div>
-                <br>
-                <div class="footer-contacts">
-                  <p><span>Tel:</span> +216 00 000 000</p> <br>
-                  <p><span>Email:</span> contact@smartech-tn.com</p> <br>
-                  <p><span>Working Hours:</span> 9am-5pm</p>
-                </div>
-
-                <div class="footer-icons">
-                  <ul>
-                    <li>
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-google"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4>Contact</h4>
-                <!-- Start  contact -->
-                  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="form contact-form">
-                      <div id="sendmessage">Your message has been sent. Thank you!</div>
-                      <div id="errormessage"></div>
-                      <form action="" method="post" role="form" class="contactForm">
-                        <!--<div class="form-group">-->
-                          <!--<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />-->
-                          <!--<div class="validation"></div>-->
-                        <!--</div>-->
-                        <div class="form-group">
-                          <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                          <div class="validation"></div>
-                        </div>
-                        <!--<div class="form-group">-->
-                          <!--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />-->
-                          <!--<div class="validation"></div>-->
-                        <!--</div>-->
-                        <div class="form-group">
-                          <textarea class="form-control" name="message" rows="2" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                          <div class="validation"></div>
-                        </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
-                      </form>
+    <!-- ***** Breadcrumb Area Start ***** -->
+    <div class="breadcrumb-area">
+        <div class="container h-100">
+            <div class="row h-100 align-items-end">
+                <div class="col-12">
+                    <div class="breadcumb--con">
+                        <h2 class="title">Smart Mobile</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'smartech-home' %}"><i class="fa fa-home"></i> Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Products</li>
+                                <li class="breadcrumb-item active" aria-current="page">Smart Add-on</li>
+                                <li class="breadcrumb-item active" aria-current="page">Smart Mobile</li>
+                            </ol>
+                        </nav>
                     </div>
-                  </div>
-          <!-- End Left contact -->
-              </div>
+                </div>
             </div>
-          </div>
-          <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4> Itinéraire</h4>
-                 <!-- Start Google Map -->
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                      <!-- Start Map -->
-                      <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen ></iframe>-->
-                      <iframe src="https://www.google.com/maps/dir/36.8064948,10.1815316/SMARTECH,+Complexe+Kheireddine+Bacha,+Bureau+A31،+11+Avenue+Abderrahmen+Azzam,+1073%E2%80%AD/@36.8159199,10.182664,15z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x12fd348bd205e8fb:0xc510daa8393b451c!2m2!1d10.1878104!2d36.8195704"></iframe>
-                      <!-- End Map -->
-                    </div>
-                    <!-- End Google Map -->
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+
+        <!-- Background Curve -->
+        <div class="breadcrumb-bg-curve">
+            <img src="./img/core-img/curve-5.png" alt="">
+        </div>
     </div>
+    <!-- ***** Breadcrumb Area End ***** -->
+
+    <!-- ***** About Us Area Start ***** -->
+    <section class="uza-about-us-area section-padding-80">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- About Thumbnail -->
+
+                <!-- About Us Content -->
+                <div class="">
+                    <div >
+                        <img src="{% static 'img/p93.jpg' %}" rel="stylesheet" width="100%" height="100%" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** About Us Area End ***** -->
+
+    <!-- ***** About Us Area Start ***** -->
+    <section class="uza-about-us-area section-padding-80">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- About Thumbnail -->
+
+                <!-- About Us Content -->
+                <div class="">
+                    <br>
+                    <div >
+                        <img src="{% static 'img/p95.jpg' %}" rel="stylesheet" width="100%" height="100%" >
+                        <img src="{% static 'img/p94.jpg' %}" rel="stylesheet" width="100%" height="100%" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** About Us Area End ***** -->
+
+    <!-- ******* All JS Files ******* -->
+    <!-- jQuery js -->
+    <script src="{% static 'blog/Smart/js/jquery.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'blog/Smart/js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'blog/Smart/js/bootstrap.min.js' %}"></script>
+    <!-- All js -->
+    <script src="{% static 'blog/Smart/js/uza.bundle.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'blog/Smart/js/default-assets/active.js' %}"></script>
+
+     <footer >
+
     <div class="footer-area-bottom" >
       <div class="container">
         <div class="row">

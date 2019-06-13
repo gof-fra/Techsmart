@@ -26,6 +26,14 @@ def industry(request):
     return render(request, 'blog/industry.html', {'title': 'Industry Solution'})
 
 
+def mobile(request):
+    return render(request, 'blog/mobile.html', {'title': 'Smart Mobile'})
+
+
+def forma(request):
+    return render(request, 'blog/forma.html', {'title': 'Smartech Formation'})
+
+
 def blog(request):
     context = {
         'posts': Post.objects.all()
